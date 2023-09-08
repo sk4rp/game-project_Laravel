@@ -21,10 +21,13 @@ use Illuminate\Support\Facades\Route;
 
 
 // Можно было использовать apiResource, но решил сделать всё подробно
-Route::get('/games', [GamesController::class, 'index']);
-Route::post('/games', [GamesController::class, 'store']);
-Route::get('/games/{id}', [GamesController::class, 'show']);
-Route::put('/games/{id}', [GamesController::class, 'update']);
-Route::delete('/games/{id}', [GamesController::class, 'destroy']);
+Route::middleware('api')->group(function () {
+    Route::get('/games', [GamesController::class, 'index']);
+    Route::post('/games', [GamesController::class, 'store']);
+    Route::get('/games/{id}', [GamesController::class, 'show']);
+    Route::put('/games/{id}', [GamesController::class, 'update']);
+    Route::delete('/games/{id}', [GamesController::class, 'destroy']);
 
-Route::get('/games/genre/{genre}', [GamesController::class, 'getGamesByGenre']);
+    Route::get('/games/genre/{genre}', [GamesController::class, 'getGamesByGenre']);
+});
+
