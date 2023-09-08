@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-
 // Можно было использовать apiResource, но решил сделать всё подробно
 Route::middleware('api')->group(function () {
     Route::get('/games', [GamesController::class, 'index']);
