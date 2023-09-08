@@ -1,5 +1,4 @@
-<h2>По проекту: </h2>
-<h3>Framework Laravel</h3>
+<h2>По проекту (Framework Laravel):</h2>
 
 <ol>
     <li>Запустить миграции (php artisan migrate)</li>
